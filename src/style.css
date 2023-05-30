@@ -1,6 +1,9 @@
+body {
+    background: #76ADA0
+}
 button {
-
-    width: 100px;
+    background: rgb(50, 136, 160);
+    width: 8%;
     font-size: 16px;
     border-radius: 15px;
     position: relative;
@@ -8,4 +11,12 @@ button {
 }
 button:hover {
     opacity: .9;
+}
+
+.color {
+    background: rgb(50, 136, 160);
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
