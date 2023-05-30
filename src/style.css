@@ -1,5 +1,6 @@
-body {
-    background: #76ADA0
+*{
+    background: rgb(211, 234, 211);
+    text-align: center;
 }
 button {
     background: rgb(50, 136, 160);
