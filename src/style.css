@@ -1,0 +1,15 @@
+*{
+    background: rgb(211, 234, 211);
+    text-align: center;
+}
+button {
+
+    width: 100px;
+    font-size: 16px;
+    border-radius: 15px;
+    position: relative;
+    left: 150px;
+}
+button:hover {
+    opacity: .9;
+}
