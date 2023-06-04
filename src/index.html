@@ -11,28 +11,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header-ghibli">
-      <h1>The studio Ghibli</h1>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/Jp5zKN31R1s"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      >
-      </iframe>
-      <p>
-        <mark class="color"
-          >Aquí puede encontrar la lista de películas por orden de
-          lanzamiento</mark
-        >
-      </p>
-      <button type="button" id="btn">Ir</button>
-    </header>
+    <header>
+      <div class="primera-pantalla">
+      <h1>The Estudio Ghibli</h1>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Jp5zKN31R1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></header>
     <div id="root"></div>
-
+    
+     <p>
+      <mark class="color">Aquí puede encontrar la lista de películas por orden de lanzamiento</mark>
+     </p>
+     <button type="button" id="btn">Ir</button>
+    </div>
+    <div class="segunda-pantalla">
+     <ul id="contenedor-peliculas"></ul>
+    </div>
+  
     <script src="main.js" type="module"></script>
   </body>
 </html>

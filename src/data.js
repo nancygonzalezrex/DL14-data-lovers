@@ -1,9 +1,9 @@
-// estas funciones son de ejemplo
+import data from './data/ghibli/ghibli.js';
+export function mostrarPeliculas (){
+  return data.films;
+}
 
-export const example = () => {
-  return 'example';
-};
+function peliculasFiltrar  (arregloDePeliculas, title){
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+
+}
