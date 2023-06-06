@@ -7,12 +7,12 @@ console.log(peliculas);
 function verPeliculas(dataghibli) {
   const contenedor = document.getElementById("contenedor-peliculas");
   for (let i = 0; i < dataghibli.length; i++) {
-    const listaPeliculas = `<li><h1></h1> ${peliculas[i].title}  <img src =${peliculas[i].poster}>  </img> ${peliculas[i].description}</li>`;
+    const listaPeliculas = `<li><h1> ${peliculas[i].title}</h1>  <img src =${peliculas[i].poster}>  </img> ${peliculas[i].description}</li>`;
     contenedor.innerHTML += listaPeliculas;
   }
 }
 verPeliculas(peliculas);
-//se crea escuchador de evento para el boton
+//se crea escuchador de evento para los botones
 botonIr.addEventListener('click', alternarPantallas);
 botonVolver.addEventListener('click', alternarPantallas);
 
@@ -20,8 +20,6 @@ function alternarPantallas(e) {
   e.preventDefault();
   const primeraPantalla = document.getElementById("primera-pantalla");
   const segundaPantalla = document.getElementById("segunda-pantalla");
-  console.log(window.getComputedStyle(primeraPantalla).display);
-  console.log(window.getComputedStyle(segundaPantalla).display);
 
   if (window.getComputedStyle(primeraPantalla).display == "block") {
     primeraPantalla.style.display = "none";
@@ -31,29 +29,15 @@ function alternarPantallas(e) {
     primeraPantalla.style.display = "block";
   }
 }
-
-// mostrarSegundaPantalla(segundaPantalla);
-
-
-
-
-
-//const boton = document.getElementById('btn')
-//boton.addEventListener('click', segundaPantalla ( (e) =>
- // e.preventDefault()))
-  //segundaPantalla.style.display = "block";//
-
-
-
-
-
-/* const studio = films
-data.filter(function(pelicula){
- return pelicula.title === 'title'
-})
-console.log(studio);
-})
-
-
-
-console.log(boton);*/
+/*const filtrarData = function (){
+  peliculas.filter(pelicula => pelicula.title);
+}
+console.log(filtrarData);
+function filtrarInformacion(data){
+const ficha = document.getElementById("card-fichaTecnica");
+for (let i = 0;i< data.length; i++) {
+   const fichaTecnica = `<div>${peliculas[i].title} <br> ${peliculas[i].director} <br> ${peliculas[i].producer} <br> ${peliculas[i].release_date}</div>`;
+   ficha.innerHTML += fichaTecnica;
+}
+}
+filtrarInformacion(peliculas);*/
