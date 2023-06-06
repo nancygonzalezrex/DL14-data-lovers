@@ -1,6 +1,6 @@
 import { mostrarPeliculas } from './data.js';
-const primeraPantalla = document.getElementById("primera-pantalla");
-const segundaPantalla = document.getElementById("segunda-pantalla");
+const botonIr = document.getElementById('btn-ir');
+const botonVolver = document.getElementById('btn-volver');
 const peliculas = mostrarPeliculas();
 console.log(peliculas);
 
@@ -13,24 +13,45 @@ function verPeliculas(dataghibli) {
 }
 verPeliculas(peliculas);
 //se crea escuchador de evento para el boton
-const boton = document.getElementById('btn')
-boton.addEventListener('click',  (e) =>
-  e.preventDefault())
-if (primeraPantalla) {
-  primeraPantalla.style.display = "block";
-  segundaPantalla.style.display = "none";
-} else {
-  segundaPantalla.style.display = "block";
-  primeraPantalla.style.display = "none";
+botonIr.addEventListener('click', alternarPantallas);
+botonVolver.addEventListener('click', alternarPantallas);
+
+function alternarPantallas(e) {
+  e.preventDefault();
+  const primeraPantalla = document.getElementById("primera-pantalla");
+  const segundaPantalla = document.getElementById("segunda-pantalla");
+  console.log(window.getComputedStyle(primeraPantalla).display);
+  console.log(window.getComputedStyle(segundaPantalla).display);
+
+  if (window.getComputedStyle(primeraPantalla).display == "block") {
+    primeraPantalla.style.display = "none";
+    segundaPantalla.style.display = "block";
+  } else if (window.getComputedStyle(segundaPantalla).display == "block") {
+    segundaPantalla.style.display = "none";
+    primeraPantalla.style.display = "block";
+  }
 }
-        
-     
-     
-   /* const studio = films
- data.filter(function(pelicula){
-    return pelicula.title === 'title'
- })
- console.log(studio);
+
+// mostrarSegundaPantalla(segundaPantalla);
+
+
+
+
+
+//const boton = document.getElementById('btn')
+//boton.addEventListener('click', segundaPantalla ( (e) =>
+ // e.preventDefault()))
+  //segundaPantalla.style.display = "block";//
+
+
+
+
+
+/* const studio = films
+data.filter(function(pelicula){
+ return pelicula.title === 'title'
+})
+console.log(studio);
 })
 
 
