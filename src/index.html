@@ -1,48 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, 
-    initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="header-ghibli">
-      <h1 class="titulo">The Studio Ghibli</h1>
-      <div class="video-para-header">
-        <iframe
-          class="iframe-header"
-          src="https://www.youtube.com/embed/Jp5zKN31R1s"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        >
-        </iframe>
-      </div>
-    </header>
-    <div id="root"></div>
 
-    <main class="main-style">
-      <section class="buscador">
-        <input
-          type="text"
-          placeholder="busqueda peliculas"
-          maxlength="60"
-          id="input-busqueda-de-peliculas"
-        />
-        <button type="button"id="ver">
-         IR
-        </button>
-      </section>
-      <div class="segunda-pantalla">
-        <ul id="contenedor-peliculas"></ul>
-      </div>
-    </main>
-    <script src="main.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, 
+    initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header-ghibli" id="header">
+    <h1 class="titulo">The Studio Ghibli</h1>
+    <div class="video-para-header">
+      <iframe class="iframe-header" src="https://www.youtube.com/embed/Jp5zKN31R1s" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </header>
+  <div id="root"></div>
+
+  <main class="main-style">
+    <section class="buscador">
+      <input type="text" placeholder="busqueda peliculas" maxlength="60" id="input-busqueda-de-peliculas" />
+      <button type="button" id="btn-ir">Ir</button>
+
+    </section>
+    <div class="segunda-pantalla" id="segunda-pantalla">
+      <button type="button" id="btn-volver">volver</button>
+      <ul id="contenedor-peliculas"></ul>
+    </div>
+  </main>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>

@@ -3,7 +3,7 @@ export function mostrarPeliculas (){
   return data.films;
 }
 
-function peliculasFiltrar  (arregloDePeliculas, title){
 
 
-}
+
+
