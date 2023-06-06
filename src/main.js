@@ -7,7 +7,12 @@ console.log(peliculas);
 function verPeliculas(dataghibli) {
   const contenedor = document.getElementById("contenedor-peliculas");
   for (let i = 0; i < dataghibli.length; i++) {
-    const listaPeliculas = `<li><h1> ${peliculas[i].title}</h1>  <img src =${peliculas[i].poster}>  </img> ${peliculas[i].description}</li>`;
+    const listaPeliculas = `
+    <li class="pelicula">
+      <h2>${peliculas[i].title}</h2>
+      <img src =${peliculas[i].poster} class="imagen-pelicula" />
+      <p>${peliculas[i].description}</p>
+    </li>`;
     contenedor.innerHTML += listaPeliculas;
   }
 }
@@ -17,18 +22,20 @@ botonIr.addEventListener('click', alternarPantallas);
 botonVolver.addEventListener('click', alternarPantallas);
 
 function alternarPantallas(e) {
+  console.log(e)
   e.preventDefault();
-  const primeraPantalla = document.getElementById("primera-pantalla");
+  const header = document.getElementById("header");
   const segundaPantalla = document.getElementById("segunda-pantalla");
 
-  if (window.getComputedStyle(primeraPantalla).display == "block") {
-    primeraPantalla.style.display = "none";
+  if (window.getComputedStyle(header).display == "block") {
+    header.style.display = "none";
     segundaPantalla.style.display = "block";
   } else if (window.getComputedStyle(segundaPantalla).display == "block") {
     segundaPantalla.style.display = "none";
-    primeraPantalla.style.display = "block";
+    header.style.display = "block";
   }
 }
+
 /*const filtrarData = function (){
   peliculas.filter(pelicula => pelicula.title);
 }
