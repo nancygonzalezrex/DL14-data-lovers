@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, 
+    initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>The Estudio Ghibli</h1>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Jp5zKN31R1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></header>
+    <header class="header-ghibli">
+      <h1 class="titulo">The Studio Ghibli</h1>
+      <div class="video-para-header">
+        <iframe
+          class="iframe-header"
+          src="https://www.youtube.com/embed/Jp5zKN31R1s"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </header>
     <div id="root"></div>
-    
-     <p>
-      <mark>Aquí puede encontrar la lista de películas por orden de lanzamiento</mark>
-     </p>
-     <button type="clic" id="btn">Ir</button>
-  
+
+    <main class="main-style">
+      <section class="buscador">
+        <input
+          type="text"
+          placeholder="busqueda peliculas"
+          maxlength="60"
+          id="input-busqueda-de-peliculas"
+        />
+        <button type="button"id="ver">
+         IR
+        </button>
+      </section>
+      <div class="segunda-pantalla">
+        <ul id="contenedor-peliculas"></ul>
+      </div>
+    </main>
     <script src="main.js" type="module"></script>
   </body>
 </html>
