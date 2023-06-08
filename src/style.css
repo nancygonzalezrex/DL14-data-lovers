@@ -164,11 +164,11 @@ button:hover {
 p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.primera-pantalla{
+.primera-interfaz{
   display: block;
 }
 
-.segunda-pantalla{
+.segunda-interfaz{
   display: none;
 }
 .header-ghibli {
