@@ -19,18 +19,19 @@
         allowfullscreen>
       </iframe>
     </div>
+    <button type="button" id="btn-ir">Ir</button>
   </header>
   <div id="root"></div>
 
   <main class="main-style">
-    <section class="buscador">
-      <input type="text" placeholder="busqueda peliculas" maxlength="60" id="input-busqueda-de-peliculas" />
-      <button type="button" id="btn-ir">Ir</button>
-
-    </section>
-    <div class="segunda-pantalla" id="segunda-pantalla">
-      <button type="button" id="btn-volver">volver</button>
+   
+    <div class="segunda-interfaz" id="segunda-interfaz">
+      <section class="buscador">
+        <input type="text" placeholder="busqueda peliculas" maxlength="60" id="input-busqueda-de-peliculas" />
+        <!--<button type="button" id="buscar">buscar</button>-->
+      </section>
       <ul id="contenedor-peliculas"></ul>
+      <button type="button" id="btn-volver">volver</button>
     </div>
   </main>
   <script src="main.js" type="module"></script>

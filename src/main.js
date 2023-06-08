@@ -2,16 +2,17 @@ import { mostrarPeliculas } from './data.js';
 const botonIr = document.getElementById('btn-ir');
 const botonVolver = document.getElementById('btn-volver');
 const peliculas = mostrarPeliculas();
-console.log(peliculas);
+const filtrado = document.getElementById('input-busqueda-de-peliculas');
 
 function verPeliculas(dataghibli) {
   const contenedor = document.getElementById("contenedor-peliculas");
+  contenedor.innerHTML=''
   for (let i = 0; i < dataghibli.length; i++) {
     const listaPeliculas = `
     <li class="pelicula">
-      <h2>${peliculas[i].title}</h2>
-      <img src =${peliculas[i].poster} class="imagen-pelicula" />
-      <p>${peliculas[i].description}</p>
+      <h2>${dataghibli[i].title}</h2>
+      <img src =${dataghibli[i].poster} class="imagen-pelicula" />
+      <p>${dataghibli[i].description}</p>
     </li>`;
     contenedor.innerHTML += listaPeliculas;
   }
@@ -20,12 +21,19 @@ verPeliculas(peliculas);
 //se crea escuchador de evento para los botones
 botonIr.addEventListener('click', alternarPantallas);
 botonVolver.addEventListener('click', alternarPantallas);
+filtrado.addEventListener('keyup', function (){
+  const filtraPelicula = peliculas.filter((pelicula)=>{
+return pelicula.title.toLowerCase().indexOf(filtrado.value.toLowerCase())!== -1
+  })
+  verPeliculas(filtraPelicula);
+});
+
 
 function alternarPantallas(e) {
   console.log(e)
   e.preventDefault();
   const header = document.getElementById("header");
-  const segundaPantalla = document.getElementById("segunda-pantalla");
+  const segundaPantalla = document.getElementById("segunda-interfaz");
 
   if (window.getComputedStyle(header).display == "block") {
     header.style.display = "none";
