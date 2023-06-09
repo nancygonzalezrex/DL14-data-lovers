@@ -5,6 +5,12 @@ const peliculas = mostrarPeliculas();
 const filtrado = document.getElementById('input-busqueda-de-peliculas');
 
 function verPeliculas(dataghibli) {
+  console.log(dataghibli);
+  const ordenarPeliculas = dataghibli.sort ((a, b)=> {
+  return a.title.localeCompare(b.title)
+})
+
+console.log('verorden',ordenarPeliculas);
   const contenedor = document.getElementById("contenedor-peliculas");
   contenedor.innerHTML=''
   for (let i = 0; i < dataghibli.length; i++) {
@@ -12,7 +18,7 @@ function verPeliculas(dataghibli) {
     <li class="pelicula">
       <h2>${dataghibli[i].title}</h2>
       <img src =${dataghibli[i].poster} class="imagen-pelicula" />
-      <p>${dataghibli[i].description}</p>
+      <p>${dataghibli[i].description}</p>${dataghibli[i].rt_score}
     </li>`;
     contenedor.innerHTML += listaPeliculas;
   }
@@ -43,16 +49,3 @@ function alternarPantallas(e) {
     header.style.display = "block";
   }
 }
-
-/*const filtrarData = function (){
-  peliculas.filter(pelicula => pelicula.title);
-}
-console.log(filtrarData);
-function filtrarInformacion(data){
-const ficha = document.getElementById("card-fichaTecnica");
-for (let i = 0;i< data.length; i++) {
-   const fichaTecnica = `<div>${peliculas[i].title} <br> ${peliculas[i].director} <br> ${peliculas[i].producer} <br> ${peliculas[i].release_date}</div>`;
-   ficha.innerHTML += fichaTecnica;
-}
-}
-filtrarInformacion(peliculas);*/
