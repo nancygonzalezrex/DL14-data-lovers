@@ -3,10 +3,12 @@ const botonIr = document.getElementById("btn-ir");
 const botonVolver = document.getElementById("btn-volver");
 const peliculas = mostrarPeliculas();
 const filtrado = document.getElementById('input-busqueda-de-peliculas');
+const ordenAlfabetico = document.getElementById('orden-alfabetico');
+
 
 function visualizarPeliculasEnPantalla(dataghibli) {
   const contenedor = document.getElementById("contenedor-peliculas");
-  contenedor.innerHTML=''
+  contenedor.innerHTML = ''
   for (let i = 0; i < dataghibli.length; i++) {
     const listaPeliculas = `
     <li class="pelicula">
@@ -18,7 +20,7 @@ function visualizarPeliculasEnPantalla(dataghibli) {
   }
 }
 
-const peliculasOrdenadas = ordenarPeliculas(peliculas);
+const peliculasOrdenadas = ordenarPeliculas(peliculas, 'a-z');
 visualizarPeliculasEnPantalla(peliculasOrdenadas);
 
 //se crea escuchador de evento para los botones
@@ -30,9 +32,16 @@ filtrado.addEventListener('keyup', function () {
 
 botonIr.addEventListener('click', alternarPantallas);
 botonVolver.addEventListener('click', alternarPantallas);
+ordenAlfabetico.addEventListener('change', function () {
+  const selectedOption = this.options[this.selectedIndex];
+  const peliculasOrdenadas = ordenarPeliculas(peliculas, selectedOption.value);
+  visualizarPeliculasEnPantalla(peliculasOrdenadas);
+});
+
 
 function alternarPantallas(e) {
   e.preventDefault();
+
   const header = document.getElementById("header");
   const segundaPantalla = document.getElementById("segunda-interfaz");
 
