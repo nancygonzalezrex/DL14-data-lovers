@@ -3,7 +3,25 @@ export function mostrarPeliculas (){
   return data.films;
 }
 
+export function ordenarPeliculas(dataghibli) {
+  const peliculasOrdenadas = dataghibli.sort((a, b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
+    if (a.title > b.title) {
+      return 1;
+    }
 
+    return 0;
+  });
+  return peliculasOrdenadas;
+}
 
-
+export function filtrarPeliculas (dataghibli, valorAFiltrar) {
+  const peliculasFiltradas = dataghibli.filter((pelicula)=>{
+    return pelicula.title.toLowerCase().indexOf(valorAFiltrar.toLowerCase())!== -1
+  })
+  const peliculasOrdenadas = ordenarPeliculas(peliculasFiltradas);
+  return peliculasOrdenadas;
+}
