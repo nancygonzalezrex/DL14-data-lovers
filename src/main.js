@@ -1,48 +1,47 @@
-import { mostrarPeliculas } from "./data.js";
+import { filtrarPeliculas, mostrarPeliculas, ordenarPeliculas } from "./data.js";
 const botonIr = document.getElementById("btn-ir");
 const botonVolver = document.getElementById("btn-volver");
 const peliculas = mostrarPeliculas();
 const filtrado = document.getElementById('input-busqueda-de-peliculas');
+const ordenAlfabetico = document.getElementById('orden-alfabetico');
 
-function verPeliculas(dataghibli) {
-  const verOrden = dataghibli.sort((a, b) => {
-    if (a.title < b.title) {
-      return -1;
-    }
 
-    if (a.title > b.title) {
-      return 1;
-    }
-
-    return 0;
-  });
-  console.log('verOrden', verOrden)
+function visualizarPeliculasEnPantalla(dataghibli) {
   const contenedor = document.getElementById("contenedor-peliculas");
-  contenedor.innerHTML=''
+  contenedor.innerHTML = ''
   for (let i = 0; i < dataghibli.length; i++) {
     const listaPeliculas = `
     <li class="pelicula">
       <h2>${dataghibli[i].title}</h2>
       <img src =${dataghibli[i].poster} class="imagen-pelicula" />
-      <p>${dataghibli[i].description}</p>
+      <p>${dataghibli[i].description}</p>${dataghibli[i].rt_score}
     </li>`;
     contenedor.innerHTML += listaPeliculas;
   }
 }
-verPeliculas(peliculas);
+
+const peliculasOrdenadas = ordenarPeliculas(peliculas, 'a-z');
+visualizarPeliculasEnPantalla(peliculasOrdenadas);
+
 //se crea escuchador de evento para los botones
+
+filtrado.addEventListener('keyup', function () {
+  const peliculasFiltradas = filtrarPeliculas(peliculas, filtrado.value);
+  visualizarPeliculasEnPantalla(peliculasFiltradas);
+});
+
 botonIr.addEventListener('click', alternarPantallas);
 botonVolver.addEventListener('click', alternarPantallas);
-filtrado.addEventListener('keyup', function (){
-  const filtraPelicula = peliculas.filter((pelicula)=>{
-    return pelicula.title.toLowerCase().indexOf(filtrado.value.toLowerCase())!== -1
-  })
-  verPeliculas(filtraPelicula);
+ordenAlfabetico.addEventListener('change', function () {
+  const selectedOption = this.options[this.selectedIndex];
+  const peliculasOrdenadas = ordenarPeliculas(peliculas, selectedOption.value);
+  visualizarPeliculasEnPantalla(peliculasOrdenadas);
 });
 
 
 function alternarPantallas(e) {
   e.preventDefault();
+
   const header = document.getElementById("header");
   const segundaPantalla = document.getElementById("segunda-interfaz");
 
