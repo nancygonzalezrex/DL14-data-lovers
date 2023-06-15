@@ -145,8 +145,8 @@ iframe {
   content: normal;
 }
 button {
-  background: rgb(50, 136, 160);
-  width: 8%;
+  background: rgb(109, 178, 197);
+  width: 12%;
   font-size: 16px;
   border-radius: 15px;
   -webkit-box-shadow: 5px -1px 59px 19px rgba(11, 115, 44, 1);
@@ -215,15 +215,29 @@ p {
   width: 100%;
 }
 
-.buscador, .ordenador {
+.buscador {
   width: 100%;
-  height: 50px;
+  height: 60px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
 #input-busqueda-de-peliculas {
   justify-content: center;
+  margin: 10px;
+}
+.ordenador{
+  height: 40px;
+  width: 200px;
+}
+.volverSection{
+  display: flex;
+  justify-content: end;
+}
+.irSection{
+display: flex;
+  justify-content: end;
+  margin-top: 50px;
 }
 
 /* Media query para tablet */
