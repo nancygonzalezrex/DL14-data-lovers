@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, 
+    initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, 
-    initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <header class="header-ghibli" id="header">
+      <h1 class="titulo">The Studio Ghibli</h1>
+      <div class="video-para-header">
+        <iframe
+          class="iframe-header"
+          src="https://www.youtube.com/embed/Jp5zKN31R1s"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+      <section class="irSection">
+      <button type="button" id="btn-ir">Ir</button>
+    </section>
+    </header>
+    <div id="root"></div>
 
-<body>
-  <header class="header-ghibli" id="header">
-    <h1 class="titulo">The Studio Ghibli</h1>
-    <div class="video-para-header">
-      <iframe class="iframe-header" src="https://www.youtube.com/embed/Jp5zKN31R1s" title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <button type="button" id="btn-ir">Ir</button>
-  </header>
-  <div id="root"></div>
+    <main class="main-style">
+      <div class="segunda-interfaz" id="segunda-interfaz">
+        <section class="buscador">
+          <input
+            type="text"
+            placeholder="busqueda peliculas"
+            maxlength="60"
+            id="input-busqueda-de-peliculas"
+          />
+        </section>
 
-  <main class="main-style">
-   
-    <div class="segunda-interfaz" id="segunda-interfaz">
-      <section class="buscador">
-        <input type="text" placeholder="busqueda peliculas" maxlength="60" id="input-busqueda-de-peliculas" />
-        <!--<button type="button" id="buscar">buscar</button>-->
+        <section class="buscador">
+        <select id="orden-alfabetico" class="ordenador">
+          <option selected>Ordernar</option>
+          <option value="a-z">A - Z</option>
+          <option value="z-a">Z - A</option>
+        </select>
       </section>
-      <select id="orden-alfabetico" class="ordenador">
-        <option value="a-z" selected>A - Z</option>
-        <option value="z-a">Z - A</option>
-      </select>
-      <ul id="contenedor-peliculas"></ul>
-      <button type="button" id="btn-volver">volver</button>
-    </div>
-  </main>
-  <script src="main.js" type="module"></script>
-</body>
-
+        <ul id="contenedor-peliculas"></ul>
+        <section class="volverSection">
+          <button type="button" id="btn-volver">volver</button>
+        </section>
+      </div>
+    </main>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
