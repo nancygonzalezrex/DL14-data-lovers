@@ -14,7 +14,7 @@ function visualizarPeliculasEnPantalla(dataghibli) {
     <li class="pelicula">
       <h2>${dataghibli[i].title}</h2>
       <img src =${dataghibli[i].poster} class="imagen-pelicula" />
-      <p>${dataghibli[i].description}</p>${dataghibli[i].rt_score}
+      <p>${dataghibli[i].description}</p><p>year: ${dataghibli[i].release_date}</p><p>score: ${dataghibli[i].rt_score}</p><p>director: ${dataghibli[i].director}</p><p>producer: ${dataghibli[i].producer}</p>
     </li>`;
     contenedor.innerHTML += listaPeliculas;
   }
@@ -42,14 +42,14 @@ ordenAlfabetico.addEventListener('change', function () {
 function alternarPantallas(e) {
   e.preventDefault();
 
-  const header = document.getElementById("header");
+  const primeraInterfaz = document.getElementById("primera-interfaz");
   const segundaPantalla = document.getElementById("segunda-interfaz");
 
-  if (window.getComputedStyle(header).display === "block") {
-    header.style.display = "none";
+  if (window.getComputedStyle(primeraInterfaz).display === "block") {
+    primeraInterfaz.style.display = "none";
     segundaPantalla.style.display = "block";
   } else if (window.getComputedStyle(segundaPantalla).display === "block") {
     segundaPantalla.style.display = "none";
-    header.style.display = "block";
+    primeraInterfaz.style.display = "block";
   }
 }

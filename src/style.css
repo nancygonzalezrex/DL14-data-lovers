@@ -245,3 +245,30 @@ p {
     width: 31%;
   }
 }
+
+footer img {
+  width: 24px;
+  height: 24px;
+}
+footer .redes-sociales{
+  background: #797676;
+  padding: 30px ;
+}
+footer .contenedor{
+  display: flex;
+  justify-content: center;
+}
+footer .redes-sociales a {
+  color: #fff;
+  text-align: center;
+  width: 24px;
+  display: block;
+  padding: 4px ;
+  border-radius: 8px;
+  font-size: 5px;
+  margin: 0 20px;
+}
+footer .redes-sociales .twitter:hover {background: #1da1f2;}
+footer .redes-sociales .facebook:hover {background: #3b5998;}
+footer .redes-sociales .youtube:hover {background: #cd201f;}
+footer .redes-sociales .instagram:hover {background: #e1306c;}

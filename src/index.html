@@ -12,6 +12,8 @@
 <body>
   <header class="header-ghibli" id="header">
     <h1 class="titulo">The Studio Ghibli</h1>
+  </header>
+  <div class="primera-interfaz" id="primera-interfaz">
     <div class="video-para-header">
       <iframe class="iframe-header" src="https://www.youtube.com/embed/Jp5zKN31R1s" title="YouTube video player"
         frameborder="0"
@@ -19,25 +21,36 @@
         allowfullscreen>
       </iframe>
     </div>
-    <button type="button" id="btn-ir">Ir</button>
-  </header>
+    <button type="button" id="btn-ir">GO</button>
+  </div>
   <div id="root"></div>
 
   <main class="main-style">
-   
+
     <div class="segunda-interfaz" id="segunda-interfaz">
       <section class="buscador">
-        <input type="text" placeholder="busqueda peliculas" maxlength="60" id="input-busqueda-de-peliculas" />
-        <!--<button type="button" id="buscar">buscar</button>-->
+        <input type="text" placeholder="movie search" maxlength="60" id="input-busqueda-de-peliculas" />
+        
       </section>
       <select id="orden-alfabetico" class="ordenador">
         <option value="a-z" selected>A - Z</option>
         <option value="z-a">Z - A</option>
       </select>
       <ul id="contenedor-peliculas"></ul>
-      <button type="button" id="btn-volver">volver</button>
+      <button type="button" id="btn-volver">Return</button>
     </div>
   </main>
+  <footer>
+    <section class="redes-sociales">
+      <div class="contenedor">
+      
+        <a class="twitter" href="https://twitter.com/gen_ghibli?lang=es"><img src="icono1/twitter.svg"></a>
+        <a class="facebook" href="https://www.facebook.com/generacionghibli/?locale=es_LA"><img src="icono1/square-facebook.svg"></i></a>
+        <a class="youtube" href="https://www.youtube.com/embed/Jp5zKN31R1s"><img src="icono1/youtube.svg"></a>
+        <a class="instagram" href="https://www.instagram.com/ghibli.movies/?hl=es"><img src="icono1/square-instagram.svg"></a>
+      </div>
+    </section>
+  </footer>
   <script src="main.js" type="module"></script>
 </body>
 
