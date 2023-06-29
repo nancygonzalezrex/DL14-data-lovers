@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, 
+    initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header-ghibli" id="header">
+    <h1 class="titulo">The Studio Ghibli</h1>
+  </header>
+  <div class="primera-interfaz" id="primera-interfaz">
+    <div class="video-para-header">
+      <iframe class="iframe-header" src="https://www.youtube.com/embed/Jp5zKN31R1s" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <section class="irSection">
+      <button type="button" id="btn-ir">GO</button>
+    </section>
+  </div>
+  <div id="root"></div>
+  <main class="main-style">
+    <div class="segunda-interfaz" id="segunda-interfaz">
+      <section class="buscador">
+        <input type="text" placeholder="movie search" maxlength="60" id="input-busqueda-de-peliculas" />
+      </section>
+      <section class="buscador">
+        <select id="orden-alfabetico" class="ordenador">
+          <option selected>Sort</option>
+          <option value="a-z">A - Z</option>
+          <option value="z-a">Z - A</option>
+        </select>
+      </section>
+      <ul id="contenedor-peliculas"></ul>
+      <section class="volverSection">
+        <button type="button" id="btn-volver">Return</button>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <section class="redes-sociales">
+      <div class="contenedor">
+        <a class="twitter" href="https://twitter.com/gen_ghibli?lang=es"><img src="icono1/twitter.svg"></a>
+        <a class="facebook" href="https://www.facebook.com/generacionghibli/?locale=es_LA"><img
+            src="icono1/square-facebook.svg"></a>
+        <a class="youtube" href="https://www.youtube.com/embed/Jp5zKN31R1s"><img src="icono1/youtube.svg"></a>
+        <a class="instagram" href="https://www.instagram.com/ghibli.movies/?hl=es"><img
+            src="icono1/square-instagram.svg"></a>
+      </div>
+    </section>
+  </footer>
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
